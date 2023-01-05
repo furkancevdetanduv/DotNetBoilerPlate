@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonaKalsınV2", "SonaKalsınV2\SonaKalsınV2.csproj", "{8231DE23-EEEF-48A4-B8C1-B5D327C62F1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreLayer", "EFCoreLayer\EFCoreLayer.csproj", "{EFEC4A4B-7661-4886-AA89-7935B5D02032}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8231DE23-EEEF-48A4-B8C1-B5D327C62F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8231DE23-EEEF-48A4-B8C1-B5D327C62F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8231DE23-EEEF-48A4-B8C1-B5D327C62F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8231DE23-EEEF-48A4-B8C1-B5D327C62F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFEC4A4B-7661-4886-AA89-7935B5D02032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFEC4A4B-7661-4886-AA89-7935B5D02032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFEC4A4B-7661-4886-AA89-7935B5D02032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFEC4A4B-7661-4886-AA89-7935B5D02032}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4526FB3C-65F5-4DF6-AAA4-DB1B6CD949D0}
+	EndGlobalSection
+EndGlobal
