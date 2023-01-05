@@ -41,7 +41,7 @@ namespace SonaKalsınV2.Controllers
         }
 
         [HttpGet, Route("GetTestModel")]
-        public async Task<TestModel> GetTestModel(int id)
+        public async Task<TestEntity> GetTestModel(int id)
         {
             return await _dbContext.testModels.FindAsync(id);
         }
@@ -49,7 +49,7 @@ namespace SonaKalsınV2.Controllers
         [HttpPost]
         public async Task<bool> AddNewTestModel(string name)
         {
-            await _dbContext.testModels.AddAsync(new TestModel() { Name = name });
+            await _dbContext.testModels.AddAsync(new TestEntity() { Name = name });
             await _dbContext.SaveChangesAsync();
             return true;
         }

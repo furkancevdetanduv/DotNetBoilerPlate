@@ -1,12 +1,12 @@
 ﻿
+
 using System.ComponentModel.DataAnnotations;
 
-namespace EFCoreLayer.Models
+namespace EFCoreLayer.Entities
 {
-    public class TestModel
+    public class BaseEntity
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
     }
 }
