@@ -9,8 +9,10 @@ namespace EFCoreLayer.Common.Interfaces
     {
         public void Add<T>(T entity) where T : BaseEntity;
         public void AddRange<T>(List<T> entityList) where T : BaseEntity;
-        public void Delete<T>(T entity) where T : BaseEntity;
-        public void DeleteById<T>(int id) where T : BaseEntity;
+        public void HardDelete<T>(T entity) where T : BaseEntity;
+        public void HardDeleteById<T>(int id) where T : BaseEntity;
+        public void SoftDelete<T>(T entity) where T : BaseEntity;
+        public void SoftDeleteById<T>(int id) where T : BaseEntity;
         public Task<T> Find<T>(int id) where T : BaseEntity;
         public void Update<T>(T entity) where T : BaseEntity;
     }
