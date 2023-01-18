@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace EFCoreLayer.Entities
+namespace DotNetBoilerPlate.EF.Entities
 {
     public class BaseEntity
     {

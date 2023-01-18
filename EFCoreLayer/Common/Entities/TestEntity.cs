@@ -1,6 +1,6 @@
-﻿using EFCoreLayer.Entities;
+﻿using DotNetBoilerPlate.EF.Entities;
 
-namespace EFCoreLayer.Models
+namespace DotNetBoilerPlate.EF.Models
 {
     public class TestEntity : BaseEntity
     {

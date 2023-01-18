@@ -1,7 +1,7 @@
-﻿using EFCoreLayer.Models;
+﻿using DotNetBoilerPlate.EF.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCoreLayer
+namespace DotNetBoilerPlate.EF
 {
     public class ProjectDbContext : DbContext
     {

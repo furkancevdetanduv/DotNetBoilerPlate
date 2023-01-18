@@ -1,4 +1,4 @@
-using EFCoreLayer;
+using DotNetBoilerPlate.EF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SonaKalsınV2
+namespace DotNetBoilerPlate.API
 {
     public class Startup
     {

@@ -1,9 +1,9 @@
 ﻿
-using EFCoreLayer.Entities;
+using DotNetBoilerPlate.EF.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EFCoreLayer.Common.Interfaces
+namespace DotNetBoilerPlate.EF.Common.Interfaces
 {
     public interface IGenericRepository
     {

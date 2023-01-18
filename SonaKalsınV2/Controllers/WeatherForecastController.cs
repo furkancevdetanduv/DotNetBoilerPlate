@@ -1,5 +1,5 @@
-﻿using EFCoreLayer;
-using EFCoreLayer.Models;
+﻿using DotNetBoilerPlate.EF;
+using DotNetBoilerPlate.EF.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SonaKalsınV2.Controllers
+namespace DotNetBoilerPlate.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

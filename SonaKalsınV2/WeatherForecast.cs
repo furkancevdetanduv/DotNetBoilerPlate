@@ -1,6 +1,6 @@
 using System;
 
-namespace SonaKalsınV2
+namespace DotNetBoilerPlate.API
 {
     public class WeatherForecast
     {

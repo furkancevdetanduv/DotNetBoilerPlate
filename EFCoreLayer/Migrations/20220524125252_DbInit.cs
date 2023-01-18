@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace EFCoreLayer.Migrations
+namespace DotNetBoilerPlate.EF.Migrations
 {
     public partial class DbInit : Migration
     {

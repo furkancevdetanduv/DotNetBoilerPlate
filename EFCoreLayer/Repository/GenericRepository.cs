@@ -1,12 +1,10 @@
-﻿
-
-using EFCoreLayer.Common.Interfaces;
-using EFCoreLayer.Entities;
+﻿using DotNetBoilerPlate.EF.Common.Interfaces;
+using DotNetBoilerPlate.EF.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EFCoreLayer.Repository
+namespace DotNetBoilerPlate.EF.Repository
 {
     public class GenericRepository : IGenericRepository
     {

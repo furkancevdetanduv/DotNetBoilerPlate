@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EFCoreLayer.Migrations
+namespace DotNetBoilerPlate.EF.Migrations
 {
     public partial class BaseEntityUpdate : Migration
     {
