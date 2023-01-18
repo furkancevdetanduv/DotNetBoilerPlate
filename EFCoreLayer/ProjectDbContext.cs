@@ -9,6 +9,6 @@ namespace EFCoreLayer
         {
         }
 
-        public DbSet<TestEntity> testModels { get; set; }
+        public DbSet<TestEntity> TestEntities { get; set; }
     }
 }

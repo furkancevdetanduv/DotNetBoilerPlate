@@ -43,13 +43,13 @@ namespace SonaKalsınV2.Controllers
         [HttpGet, Route("GetTestModel")]
         public async Task<TestEntity> GetTestModel(int id)
         {
-            return await _dbContext.testModels.FindAsync(id);
+            return await _dbContext.TestEntities.FindAsync(id);
         }
 
         [HttpPost]
         public async Task<bool> AddNewTestModel(string name)
         {
-            await _dbContext.testModels.AddAsync(new TestEntity() { Name = name });
+            await _dbContext.TestEntities.AddAsync(new TestEntity() { Name = name });
             await _dbContext.SaveChangesAsync();
             return true;
         }
