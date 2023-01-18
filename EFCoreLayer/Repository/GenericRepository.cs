@@ -1,5 +1,5 @@
-﻿using DotNetBoilerPlate.EF.Common.Interfaces;
-using DotNetBoilerPlate.EF.Entities;
+﻿using DotNetBoilerPlate.EF.Common.Entities;
+using DotNetBoilerPlate.EF.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

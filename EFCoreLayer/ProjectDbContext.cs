@@ -1,4 +1,4 @@
-﻿using DotNetBoilerPlate.EF.Models;
+﻿using DotNetBoilerPlate.EF.Common.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DotNetBoilerPlate.EF
@@ -10,5 +10,7 @@ namespace DotNetBoilerPlate.EF
         }
 
         public DbSet<TestEntity> TestEntities { get; set; }
+        public DbSet<User> Users { get; set; }
+
     }
 }

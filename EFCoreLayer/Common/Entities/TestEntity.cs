@@ -1,6 +1,5 @@
-﻿using DotNetBoilerPlate.EF.Entities;
-
-namespace DotNetBoilerPlate.EF.Models
+﻿
+namespace DotNetBoilerPlate.EF.Common.Entities
 {
     public class TestEntity : BaseEntity
     {

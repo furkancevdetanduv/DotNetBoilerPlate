@@ -1,7 +1,4 @@
-﻿using DotNetBoilerPlate.EF;
-using DotNetBoilerPlate.EF.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
@@ -15,12 +12,6 @@ namespace DotNetBoilerPlate.API.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private readonly ProjectDbContext _dbContext;
-
-        public WeatherForecastController(ProjectDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
 
         private static readonly string[] Summaries = new[]
         {
@@ -41,16 +32,17 @@ namespace DotNetBoilerPlate.API.Controllers
         }
 
         [HttpGet, Route("GetTestModel")]
-        public async Task<TestEntity> GetTestModel(int id)
+        public async Task<int> GetTestModel(int id)
         {
-            return await _dbContext.TestEntities.FindAsync(id);
+            //return await _dbContext.TestEntities.FindAsync(id);
+            return 1;
         }
 
         [HttpPost]
         public async Task<bool> AddNewTestModel(string name)
         {
-            await _dbContext.TestEntities.AddAsync(new TestEntity() { Name = name });
-            await _dbContext.SaveChangesAsync();
+            //await _dbContext.TestEntities.AddAsync(new TestEntity() { Name = name });
+            //await _dbContext.SaveChangesAsync();
             return true;
         }
     }

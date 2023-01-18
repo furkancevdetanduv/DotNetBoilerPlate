@@ -1,5 +1,5 @@
 ﻿
-using DotNetBoilerPlate.EF.Entities;
+using DotNetBoilerPlate.EF.Common.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

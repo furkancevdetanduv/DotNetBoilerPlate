@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBoilerPlate.API", "So
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBoilerPlate.EF", "EFCoreLayer\DotNetBoilerPlate.EF.csproj", "{EFEC4A4B-7661-4886-AA89-7935B5D02032}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBoilerPlate.Domain", "DotNetBoilerPlate.DomainT\DotNetBoilerPlate.Domain.csproj", "{FF3F28FA-04E1-40A1-9EFF-D09503AC2634}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EFEC4A4B-7661-4886-AA89-7935B5D02032}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFEC4A4B-7661-4886-AA89-7935B5D02032}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFEC4A4B-7661-4886-AA89-7935B5D02032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3F28FA-04E1-40A1-9EFF-D09503AC2634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3F28FA-04E1-40A1-9EFF-D09503AC2634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3F28FA-04E1-40A1-9EFF-D09503AC2634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3F28FA-04E1-40A1-9EFF-D09503AC2634}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
