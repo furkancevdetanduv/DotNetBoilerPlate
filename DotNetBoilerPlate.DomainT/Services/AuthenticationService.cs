@@ -17,23 +17,34 @@ namespace DotNetBoilerPlate.Domain.Services
             _genericRepository = genericRepository;
         }
 
-        public async Task<bool> Login(string username, string password)
+        public async Task<ServiceResponse<string>> Login(string username, string password)
         {
             Expression<Func<User, bool>> predicate = m => m.UserName == username;
             var userEntity = await _genericRepository.FindByFilter(predicate);
-            if (userEntity == null)
+            if (userEntity == null || !VeriyfPassword(password, userEntity.PasswordKey, userEntity.PasswordHash))
             {
-                throw new Exception("User name is wrong");
-            }
+                return new ServiceResponse<string>()
+                {
+                    Message = "Username or password is wrong",
+                    Success = false
+                };
+            }           
 
-            return VeriyfPassword(password, userEntity.PasswordKey, userEntity.PasswordHash);
+            return new ServiceResponse<string>()
+            {
+                Data = GenerateToken()
+            };
         }
 
-        public async Task<int> Register(UserDto user)
+        public async Task<ServiceResponse<int>> Register(UserDto user)
         {
             if (await UserExist(user.UserName))
             {
-                throw new Exception("Username exist");
+                return new ServiceResponse<int>() 
+                {
+                    Message = "Username exist",
+                    Success = false
+                };
             }
 
             CreateHashForPassword(user.Password, out byte[] passwordKey, out byte[] passwordHash);
@@ -46,7 +57,10 @@ namespace DotNetBoilerPlate.Domain.Services
                             Email = user.Email,
                         });
 
-            return newUser.Id;
+            return new ServiceResponse<int>()
+            {
+                Data = newUser.Id            
+            };
         }
 
         public async Task<bool> UserExist(string username)
@@ -71,6 +85,11 @@ namespace DotNetBoilerPlate.Domain.Services
             var hmac = new HMACSHA512(passwordKey);
             byte[] hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             return passwordHash.SequenceEqual(hash);
+        }
+
+        private string GenerateToken()
+        {
+            return string.Empty;
         }
     }
 }

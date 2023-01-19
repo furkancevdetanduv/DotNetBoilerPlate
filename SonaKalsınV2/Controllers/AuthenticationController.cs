@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DotNetBoilerPlate.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[Authentication]")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
@@ -18,13 +18,15 @@ namespace DotNetBoilerPlate.API.Controllers
         }
 
         [HttpPost]
-        public async Task Register(UserDto user)
+        [Route("/register")]
+        public async Task<ServiceResponse<int>> Register(UserDto user)
         {
-            await _authenticationService.Register(user);
+            return await _authenticationService.Register(user);
         }
 
-        [HttpGet]
-        public async Task<bool> Login(string username, string password)
+        [HttpPost]
+        [Route("/login")]
+        public async Task<ServiceResponse<string>> Login(string username, string password)
         {
             return await _authenticationService.Login(username, password);
         }
