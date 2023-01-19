@@ -1,4 +1,8 @@
+using DotNetBoilerPlate.Domain.Interfaces;
+using DotNetBoilerPlate.Domain.Services;
 using DotNetBoilerPlate.EF;
+using DotNetBoilerPlate.EF.Common.Interfaces;
+using DotNetBoilerPlate.EF.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,7 +38,10 @@ namespace DotNetBoilerPlate.API
                 c.SwaggerDoc("v2", new OpenApiInfo { Title = "API" });
             });
 
-            var x = services.AddDbContext<ProjectDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ProjectDbContext>(
+                options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IGenericRepository, GenericRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

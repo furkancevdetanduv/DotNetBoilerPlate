@@ -1,7 +1,10 @@
 ﻿using DotNetBoilerPlate.EF.Common.Entities;
 using DotNetBoilerPlate.EF.Common.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace DotNetBoilerPlate.EF.Repository
@@ -15,12 +18,13 @@ namespace DotNetBoilerPlate.EF.Repository
             _dbContext = dbContext;
         }
 
-        public async void Add<T>(T entity) where T : BaseEntity
+        public async Task<T> Add<T>(T entity) where T : BaseEntity
         {
             try
             {
                 await _dbContext.Set<T>().AddAsync(entity);
                 await _dbContext.SaveChangesAsync();
+                return entity;
 
             }
             catch (Exception ex)
@@ -29,7 +33,7 @@ namespace DotNetBoilerPlate.EF.Repository
             }
         }
 
-        public async void AddRange<T>(List<T> entityList) where T : BaseEntity
+        public async Task AddRange<T>(List<T> entityList) where T : BaseEntity
         {
             try
             {
@@ -43,7 +47,7 @@ namespace DotNetBoilerPlate.EF.Repository
             
         }
 
-        public async void HardDelete<T>(T entity) where T : BaseEntity
+        public async Task HardDelete<T>(T entity) where T : BaseEntity
         {
             try
             {
@@ -56,7 +60,7 @@ namespace DotNetBoilerPlate.EF.Repository
             }        
         }
 
-        public async void HardDeleteById<T>(int id) where T : BaseEntity
+        public async Task HardDeleteById<T>(int id) where T : BaseEntity
         {
             try
             {
@@ -74,7 +78,7 @@ namespace DotNetBoilerPlate.EF.Repository
                 throw ex;
             }
         }
-        public async void SoftDelete<T>(T entity) where T : BaseEntity
+        public async Task SoftDelete<T>(T entity) where T : BaseEntity
         {
             try
             {
@@ -88,7 +92,7 @@ namespace DotNetBoilerPlate.EF.Repository
             }
         }
 
-        public async void SoftDeleteById<T>(int id) where T : BaseEntity
+        public async Task SoftDeleteById<T>(int id) where T : BaseEntity
         {
             try
             {
@@ -113,7 +117,20 @@ namespace DotNetBoilerPlate.EF.Repository
             return await _dbContext.Set<T>().FindAsync(id);
         }
 
-        public async void Update<T>(T entity) where T : BaseEntity
+        public async Task<T> FindByFilter<T>(Expression<Func<T, bool>> predicate) where T : BaseEntity
+        {
+            try
+            {
+                return await _dbContext.Set<T>().SingleOrDefaultAsync(predicate);
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task Update<T>(T entity) where T : BaseEntity
         {
             try
             {
